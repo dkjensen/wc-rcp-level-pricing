@@ -1,7 +1,7 @@
 === WooCommerce - Restrict Content Pro Level Pricing ===
-Contributors: dkjensen
-Tested up to: 4.7.2
-Stable tag: 1.0.0
+Contributors: dkjensen,seattlewebco
+Tested up to: 5.0.2
+Stable tag: 1.0.4
 License: GPLv2 or later
 
 Provides per subscription level product pricing for WooCommerce and Restrict Content Pro
@@ -13,7 +13,7 @@ This is useful for sites that do not necessarily want to give a fixed discount t
 
 == Installation ==
 
-1. Upload `woocommerce-restrict-content-pro-level-pricing` to the `/wp-content/plugins/` directory
+1. Upload `wc-rcp-level-pricing` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
@@ -41,3 +41,30 @@ You can filter the display price of a product manually by filtering the output.
      * @param integer $level Subscription level price to return
      */
     $level_price = apply_filters( 'rcp_woocommerce_level_price', $price, $product, 1 );
+
+
+= How can I enable discounts for trial users? =
+
+By default trial users are not permitted subscription level pricing. You can modify this before with the filter below:
+
+    add_filter( 'wc_rcp_level_pricing_disallow_trial', '__return_false', 10, 4 );
+
+
+== Changelog ==
+
+= 1.0.4 =
+* Compatibility with PHP 7.3
+
+= 1.0.3 =
+* Improved WooCommerce 3.0+ compatibility
+
+= 1.0.2 =
+* WooCommerce 3.0+ compatibility
+
+= 1.0.1 =
+* Check if subscription level exists before retrieving level pricing
+* Check members status before retreiving level pricing
+* Restrict trial users from receiving level pricing, add `wc_rcp_level_pricing_disallow_trial` filter 
+
+= 1.0.0 =
+* Initial plugin release
