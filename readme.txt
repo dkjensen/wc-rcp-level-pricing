@@ -1,7 +1,7 @@
 === WooCommerce - Restrict Content Pro Level Pricing ===
 Contributors: dkjensen,seattlewebco
-Tested up to: 5.0.2
-Stable tag: 1.0.4
+Tested up to: 5.2.5
+Stable tag: 1.0.5
 License: GPLv2 or later
 
 Provides per subscription level product pricing for WooCommerce and Restrict Content Pro
@@ -51,6 +51,10 @@ By default trial users are not permitted subscription level pricing. You can mod
 
 
 == Changelog ==
+
+= 1.0.5 =
+* Fix plugin dependency check
+* Update compatibility
 
 = 1.0.4 =
 * Compatibility with PHP 7.3
